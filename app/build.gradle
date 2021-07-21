@@ -1,0 +1,68 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: "kotlin-kapt"
+
+android {
+    compileSdkVersion androidVersions.compile
+    buildToolsVersion androidVersions.build_tools
+
+    defaultConfig {
+        applicationId "com.titou.blaum"
+        minSdkVersion androidVersions.min
+        targetSdkVersion androidVersions.target
+        versionCode 1
+        versionName "0.0.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    compileOptions {
+        sourceCompatibility javaVersion
+        targetCompatibility javaVersion
+    }
+    buildFeatures {
+        viewBinding true
+        dataBinding = true
+    }
+
+    buildTypes {
+        debug {
+        }
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+
+    //Kotlin
+    implementation runDependencies.kotlin_std_lib
+    implementation runDependencies.koin_android
+    implementation runDependencies.koin_android_fragment
+    implementation runDependencies.koin_android_scope
+    implementation runDependencies.androidx_appcompat
+    implementation runDependencies.androidx_core
+
+    // GSON
+    implementation runDependencies.google_gson
+
+    // Reactive extensions
+    implementation runDependencies.rx_android
+    implementation runDependencies.rx_kotlin
+
+    // Retrofit for API requests
+    implementation runDependencies.retrofit
+
+    //UI
+    implementation runDependencies.material
+
+    //Project modules
+    implementation project(':data_source')
+    implementation project(':entities')
+    implementation project(':presentation')
+    implementation project(':use_cases')
+
+}

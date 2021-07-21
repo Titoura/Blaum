@@ -1,0 +1,11 @@
+apply from: "$rootDir/gradle/base.gradle"
+
+dependencies{
+
+    // Project modules
+    implementation project(':entities')
+    implementation project(':use_cases')
+
+    // UI
+    implementation runDependencies.material
+}

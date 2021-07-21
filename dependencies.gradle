@@ -1,0 +1,56 @@
+ext {
+    ext.kotlin_version = "1.4.10"
+
+    // Versions sorted alphabetically
+    versions = [
+            android_gradle_plugin    : '4.2.1',
+            androidx_appcompat       : "1.1.0",
+            androidx_core            : "1.3.1",
+            androidx_test_junit      : "1.1.2",
+            androidx_constraintlayout: "2.0.4",
+            google_gson              : "2.8.6",
+            google_services          : "4.3.4",
+            koin                     : "2.1.6",
+            kotlin                   : "1.5.21",
+            junit                    : "4.13",
+            litho                    : "0.38.0",
+            material                 : "1.4.0",
+            retrofit                 : "2.9.0",
+            retrofit_rx_adapter      : "2.9.0",
+            retrofit_gson_converter  : "2.9.0",
+            room                     : "2.3.0-alpha03",
+            rx                       : "3.0.0"
+    ]
+
+    runDependencies = [
+            kotlin_std_lib                      : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}",
+            androidx_appcompat                  : "androidx.appcompat:appcompat:${versions.androidx_appcompat}",
+            androidx_constraintlayout           : "androidx.constraintlayout:constraintlayout:${versions.androidx_constraintlayout}",
+            androidx_core                       : "androidx.core:core-ktx:${versions.androidx_core}",
+            swiperefreshlayout                  : "androidx.swiperefreshlayout:swiperefreshlayout:${versions.androidx_appcompat}",
+            google_gson                         : "com.google.code.gson:gson:${versions.google_gson}",
+            koin_android                        : "org.koin:koin-android:${versions.koin}",
+            koin_android_fragment               : "org.koin:koin-androidx-fragment:${versions.koin}",
+            koin_android_scope                  : "org.koin:koin-androidx-scope:${versions.koin}",
+            koin_android_view_model             : "org.koin:koin-androidx-viewmodel:${versions.koin}",
+            material                            : "com.google.android.material:material:${versions.material}",
+            retrofit                            : "com.squareup.retrofit2:retrofit:${versions.retrofit}",
+            retrofit_rx_adapter                 : "com.squareup.retrofit2:adapter-rxjava3:${versions.retrofit_rx_adapter}",
+            retrofit_gson_converter             : "com.squareup.retrofit2:converter-gson:${versions.retrofit_gson_converter}",
+            room_runtime                        : "androidx.room:room-runtime:${versions.room}",
+            room_compiler                       : "androidx.room:room-compiler:${versions.room}",
+            room_ktx                            : "androidx.room:room-ktx:${versions.room}",
+            room_rxjava3                        : "androidx.room:room-rxjava3:${versions.room}",
+            rx_android                          : "io.reactivex.rxjava3:rxandroid:${versions.rx}",
+            rx_kotlin                           : "io.reactivex.rxjava3:rxkotlin:${versions.rx}"
+    ]
+
+    testDependencies = []
+
+    buildDependencies = [
+            android_gradle_plugin        : "com.android.tools.build:gradle:${versions.android_gradle_plugin}",
+            google_services              : "com.google.gms:google-services:${versions.google_services}",
+            kotlin_all_open_gradle_plugin: "org.jetbrains.kotlin:kotlin-allopen:${versions.kotlin}",
+            kotlin_gradle_plugin         : "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
+    ]
+}

@@ -1,0 +1,6 @@
+include ':app'
+include ':entities'
+include ':data_source'
+include ':presentation'
+include ':use_cases'
+rootProject.name = "Blaum"
