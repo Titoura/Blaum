@@ -1,8 +1,14 @@
 package com.titou.blaum
 
-import org.koin.core.module.Module
+import com.titou.blaum.data_source.di.DatabaseModule
+import com.titou.blaum.data_source.di.TitlesApiModule
+import com.titou.blaum.presentation.di.ActivityModule
 
 object KoinModules {
 
-    fun toList() = listOf<Module>()
+    fun toList() = listOf(
+        ActivityModule.module,
+        DatabaseModule.module,
+        TitlesApiModule.module
+        )
 }
