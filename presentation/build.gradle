@@ -12,4 +12,9 @@ dependencies{
 
     // Image caching and loading
     implementation runDependencies.glide
+
+    // Used for UI testing
+    androidTestImplementation testDependencies.androidx_test_runner
+    androidTestImplementation runDependencies.material
+    androidTestImplementation runDependencies.androidx_constraintlayout
 }

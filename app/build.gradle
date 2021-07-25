@@ -64,12 +64,18 @@ dependencies {
     //UI
     implementation runDependencies.material
 
+    // UI Testing
     androidTestImplementation testDependencies.androidx_test_junit
     androidTestImplementation testDependencies.androidx_test_espresso
+    androidTestImplementation testDependencies.androidx_test_runner
+    androidTestImplementation testDependencies.espresso_contrib
+
+    // Unit Testing
     testImplementation testDependencies.junit
     testImplementation testDependencies.mockk
     testImplementation testDependencies.assertk
     testImplementation testDependencies.koin
+    testImplementation testDependencies.ui_automator
 
 
     //Project modules
