@@ -2,5 +2,7 @@
 <resources>
     <string name="title_thumbnail_description">Title thumbnail</string>
     <string name="album_x">Album %d</string>
-    <string name="app_name">Blaum</string>-
+    <string name="app_name">Blaum</string>
+    <string name="search_filter">Filter</string>
+    <string name="search_hint">Filter</string>-
 </resources>

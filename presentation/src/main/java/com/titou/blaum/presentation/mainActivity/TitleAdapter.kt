@@ -23,16 +23,10 @@ class TitleAdapter(titlesSubject: BehaviorSubject<MainActivityState>) :
     private val titles = mutableListOf<Title>()
 
     init {
+        //Todo : create function to remove and add directly in the mutablelist
         titlesSubject.subscribe({ newState ->
-            if(titles.isEmpty()){
-                titles.addAll(newState.titles)
-            }else{
-                for(newTitle in newState.titles){
-                    if(!titles.contains(newTitle)){
-                        titles.add(newTitle)
-                    }
-                }
-            }
+            titles.clear()
+            titles.addAll(newState.titles)
         }, {
             it.printStackTrace()
         })
