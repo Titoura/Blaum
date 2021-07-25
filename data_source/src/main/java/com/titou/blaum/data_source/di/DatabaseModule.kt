@@ -12,6 +12,7 @@ object DatabaseModule {
     val module = module {
 
         single { get<Database>().albumRoomModelDao() }
+        single { get<Database>().titlesRoomModelDao() }
 
         single {
             Room.databaseBuilder(androidApplication(), Database::class.java, "blaum.db").build()

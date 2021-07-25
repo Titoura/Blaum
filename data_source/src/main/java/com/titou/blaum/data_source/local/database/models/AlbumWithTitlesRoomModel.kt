@@ -6,7 +6,7 @@ import androidx.room.Relation
 
 @Entity(tableName = "albumWithTitles")
 data class AlbumWithTitlesRoomModel(
-    @Embedded val albuml: AlbumRoomModel,
+    @Embedded val id: AlbumRoomModel,
     @Relation(
         parentColumn = "id",
         entityColumn = "albumId"

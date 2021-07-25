@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.titou.blaum.data_source.local.database.dao.AlbumDao
+import com.titou.blaum.data_source.local.database.dao.TitlesDao
 import com.titou.blaum.data_source.local.database.models.AlbumRoomModel
 import com.titou.blaum.data_source.local.database.models.TitleRoomModel
 
@@ -14,6 +15,7 @@ const val DB_NAME = "Blaum.db"
 @androidx.room.Database(entities = [TitleRoomModel::class, AlbumRoomModel::class], version = DB_VERSION)
 abstract class Database : RoomDatabase() {
     abstract fun albumRoomModelDao(): AlbumDao
+    abstract fun titlesRoomModelDao(): TitlesDao
 
     companion object {
         @Volatile
