@@ -40,6 +40,7 @@ android {
 
 
     testOptions {
+        unitTests.returnDefaultValues = true
     }
 }
 
@@ -61,6 +62,14 @@ dependencies {
     implementation runDependencies.androidx_appcompat
     implementation runDependencies.androidx_core
 
+    // Testing dependencies
+    androidTestImplementation testDependencies.androidx_test_junit
+    androidTestImplementation testDependencies.androidx_test_espresso
     testImplementation testDependencies.junit
+    testImplementation testDependencies.mockk
+    testImplementation testDependencies.assertk
+    testImplementation testDependencies.koin
+
+
 
 }

@@ -22,7 +22,7 @@ android {
     }
     buildFeatures {
         viewBinding true
-        dataBinding = true
+        dataBinding true
     }
 
     buildTypes {
@@ -34,6 +34,11 @@ android {
             proguardFiles 'proguard-rules.pro'
         }
     }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+
 }
 
 dependencies {
@@ -58,6 +63,14 @@ dependencies {
 
     //UI
     implementation runDependencies.material
+
+    androidTestImplementation testDependencies.androidx_test_junit
+    androidTestImplementation testDependencies.androidx_test_espresso
+    testImplementation testDependencies.junit
+    testImplementation testDependencies.mockk
+    testImplementation testDependencies.assertk
+    testImplementation testDependencies.koin
+
 
     //Project modules
     implementation project(':data_source')

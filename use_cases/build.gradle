@@ -2,4 +2,5 @@ apply from: "$rootDir/gradle/base.gradle"
 dependencies {
     implementation project(':entities')
 
+    testImplementation project(':entities')
 }
