@@ -1,4 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!--    Padding and Margin     -->
+    <dimen name="spacing_small">4dp</dimen>
+    <dimen name="spacing_default">8dp</dimen>
+    <dimen name="spacing_large">16dp</dimen>
+    <dimen name="spacing_xlarge">24dp</dimen>
+
+    <!--    Icons size     -->
+    <dimen name="icon_small">40dp</dimen>
+    <dimen name="icon_medium">80dp</dimen>
+    <dimen name="icon_large">120dp</dimen>
+
+    <!--    Cards dimensions     -->
+    <dimen name="card_radius">8dp</dimen>
+    <dimen name="card_elevation">8dp</dimen>
+
+    <!--    Font sizes     -->
+    <dimen name="h1">40sp</dimen>
+    <dimen name="h2">32sp</dimen>
+    <dimen name="h3">24sp</dimen>
+    <dimen name="p1">20sp</dimen>
+    <dimen name="p2">16sp</dimen>
+    <dimen name="p3">12sp</dimen>
+
 </resources>
