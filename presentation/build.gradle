@@ -8,4 +8,8 @@ dependencies{
 
     // UI
     implementation runDependencies.material
+    implementation runDependencies.androidx_constraintlayout
+
+    // Image caching and loading
+    implementation runDependencies.glide
 }
