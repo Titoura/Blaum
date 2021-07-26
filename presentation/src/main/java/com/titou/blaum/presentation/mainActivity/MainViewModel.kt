@@ -14,17 +14,18 @@ import org.koin.core.KoinComponent
 
 class MainViewModel(private val titleRepository: TitleRepository) : KoinComponent, ViewModel() {
 
+
     var scrollState: Parcelable? = null
     private val disposables = CompositeDisposable()
-    var mainActivityState = BehaviorSubject.createDefault(
+    var mainActivityState: BehaviorSubject<MainActivityState> = BehaviorSubject.createDefault(
         MainActivityState(
             isLoading = true,
             error = null,
             titles = emptyList()
         )
     )
-    val notifyDataSetChangedTrigger = BehaviorSubject.createDefault(Unit)
-    val searchFilterSubject = BehaviorSubject.createDefault("")
+    val notifyDataSetChangedTrigger: BehaviorSubject<Unit> = BehaviorSubject.createDefault(Unit)
+    val searchFilterSubject: BehaviorSubject<String> = BehaviorSubject.createDefault("")
 
     init {
         Observables.combineLatest(
@@ -37,15 +38,16 @@ class MainViewModel(private val titleRepository: TitleRepository) : KoinComponen
                 } else {
                     titles.filter { it.title.contains(searchInput) }
                 }
+
             }
             .observeOn(Schedulers.io())
             .subscribeOn(AndroidSchedulers.mainThread())
-            .subscribe({
+            .subscribe({ newTitles ->
                 mainActivityState.onNext(
                     MainActivityState(
                         isLoading = false,
                         error = null,
-                        titles = it
+                        titles = newTitles
                     )
                 )
                 notifyDataSetChangedTrigger.onNext(Unit)
