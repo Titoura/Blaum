@@ -1,6 +1,5 @@
 package com.titou.blaum.presentation.mainActivity
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -20,7 +19,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private val disposables = CompositeDisposable()
 
-    //    private val adapter: TitleAdapter by inject { parametersOf(viewModel.mainActivityState) }
     private val viewModel: MainViewModel by viewModel()
     lateinit var adapter: TitleAdapter
 
@@ -30,6 +28,12 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setUpRecyclerView()
+        setUpRefreshDataTrigger()
+        setUpStateUpdates()
+    }
+
+    private fun setUpRecyclerView(){
         adapter = TitleAdapter(viewModel.mainActivityState)
 
         binding.recyclerview.apply {
@@ -38,6 +42,9 @@ class MainActivity : AppCompatActivity() {
             layoutManager = LinearLayoutManager(this@MainActivity)
         }
 
+    }
+
+    private fun setUpRefreshDataTrigger(){
         viewModel.notifyDataSetChangedTrigger
             .subscribeOn(AndroidSchedulers.mainThread())
             .subscribe({
@@ -49,8 +56,15 @@ class MainActivity : AppCompatActivity() {
             }).addTo(disposables)
     }
 
-    override fun onNewIntent(intent: Intent?) {
-        super.onNewIntent(intent)
+    private fun setUpStateUpdates(){
+        binding.state = viewModel.mainActivityState.value
+
+        viewModel.mainActivityState.subscribeOn(AndroidSchedulers.mainThread())
+            .subscribe({ newState ->
+                    binding.state = newState
+            }, {
+                it.printStackTrace()
+            }).addTo(disposables)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -59,13 +73,13 @@ class MainActivity : AppCompatActivity() {
         val menuItem: MenuItem = menu.findItem(R.id.search_menu_item)
         val searchView = menuItem.actionView as SearchView
         searchView.maxWidth = Int.MAX_VALUE
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 return false
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                viewModel.searchFilterSubject.onNext(newText?:"")
+                viewModel.searchFilterSubject.onNext(newText ?: "")
                 return true
             }
 
