@@ -1,6 +1,6 @@
 package com.titou.blaum.data_source.mapper
 
-import com.titou.blaum.data.entity.Title
+import com.titou.blaum.entities.Title
 import com.titou.blaum.data_source.local.database.models.TitleRoomModel
 import com.titou.blaum.data_source.remote.titles_api.dtos.TitleResponseDto
 

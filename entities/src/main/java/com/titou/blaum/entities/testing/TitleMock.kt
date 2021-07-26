@@ -1,6 +1,6 @@
-package com.titou.blaum.data.testing
+package com.titou.blaum.entities.testing
 
-import com.titou.blaum.data.entity.Title
+import com.titou.blaum.entities.Title
 
 object TitleMock {
     val title1 = Title(

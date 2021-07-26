@@ -1,7 +1,7 @@
 package com.titou.blaum.data_source.remote.titles_api.requests;
 
 import android.util.Log
-import com.titou.blaum.data.entity.Title
+import com.titou.blaum.entities.Title
 import com.titou.blaum.data_source.remote.titles_api.api.TitlesApiService
 import com.titou.blaum.data_source.mapper.toTitleModel
 import com.titou.blaum.use_cases.RemoteTitlesDataSource

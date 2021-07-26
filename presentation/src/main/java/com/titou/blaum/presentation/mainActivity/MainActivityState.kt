@@ -1,6 +1,6 @@
 package com.titou.blaum.presentation.mainActivity
 
-import com.titou.blaum.data.entity.Title
+import com.titou.blaum.entities.Title
 
 
 data class MainActivityState(

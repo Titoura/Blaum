@@ -1,7 +1,6 @@
 package com.titou.blaum.use_cases
 
-import com.titou.blaum.data.testing.TitleMock
-import org.junit.Rule
+import com.titou.blaum.entities.testing.TitleMock
 import org.junit.Test
 import org.koin.test.KoinTest
 import java.util.concurrent.TimeUnit

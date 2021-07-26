@@ -1,7 +1,6 @@
 package com.titou.blaum.data_source.local.database
 
-import com.titou.blaum.data.entity.Title
-import com.titou.blaum.data_source.local.database.dao.AlbumDao
+import com.titou.blaum.entities.Title
 import com.titou.blaum.data_source.local.database.dao.TitlesDao
 import com.titou.blaum.data_source.mapper.toTitleModel
 import com.titou.blaum.data_source.mapper.toTitleRoomModel

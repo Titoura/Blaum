@@ -1,4 +1,4 @@
-package com.titou.blaum.data.entity
+package com.titou.blaum.entities
 
 data class Album(
     val id: Int,

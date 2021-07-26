@@ -1,7 +1,7 @@
 package com.titou.blaum.use_cases
 
-import com.titou.blaum.data.entity.Title
-import com.titou.blaum.data.testing.TitleMock
+import com.titou.blaum.entities.Title
+import com.titou.blaum.entities.testing.TitleMock
 import io.mockk.every
 import io.mockk.mockk
 import io.reactivex.rxjava3.core.Observable

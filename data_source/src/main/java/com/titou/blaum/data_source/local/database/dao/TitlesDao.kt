@@ -1,7 +1,6 @@
 package com.titou.blaum.data_source.local.database.dao
 
 import androidx.room.*
-import com.titou.blaum.data.entity.Title
 import com.titou.blaum.data_source.local.database.models.TitleRoomModel
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.core.Single

@@ -1,6 +1,6 @@
 package com.titou.blaum.data_source.remote.titles_api.requests
 
-import com.titou.blaum.data.testing.TitleMock
+import com.titou.blaum.entities.testing.TitleMock
 import com.titou.blaum.data_source.Stubs
 import com.titou.blaum.data_source.remote.titles_api.api.TitlesApiService
 import org.junit.Test

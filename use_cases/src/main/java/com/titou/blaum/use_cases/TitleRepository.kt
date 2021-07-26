@@ -1,6 +1,6 @@
 package com.titou.blaum.use_cases
 
-import com.titou.blaum.data.entity.Title
+import com.titou.blaum.entities.Title
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.core.Single
 import org.koin.core.KoinComponent
