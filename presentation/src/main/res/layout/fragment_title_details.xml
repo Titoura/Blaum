@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="title"
+            type="com.titou.blaum.entities.Title" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/titles_list_root"
+        android:layout_width="match_parent"
+        android:background="@color/secondaryColor"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/title_imageview"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintWidth_percent="0.3"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="@dimen/spacing_xlarge"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/details_imageview_description"
+            />
+
+        <TextView
+            android:id="@+id/title_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/spacing_default"
+            android:layout_marginVertical="@dimen/spacing_large"
+            android:text="@{title.title}"
+            android:textColor="@color/primaryTextColor"
+            android:textSize="@dimen/h2"
+            android:gravity="center"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_imageview"
+            tools:text="Thriller" />
+
+        <TextView
+            android:id="@+id/title_album_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/spacing_default"
+            android:layout_marginVertical="@dimen/spacing_default"
+            android:text="@{`Album ` + String.valueOf(title.albumId)}"
+            android:textColor="@color/secondaryTextColor"
+            android:textSize="@dimen/h2"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_textview"
+            tools:text="Album 1" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
