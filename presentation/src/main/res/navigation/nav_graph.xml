@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/titlesListFragment">
+
+    <fragment
+        android:id="@+id/titlesListFragment"
+        android:name="com.titou.blaum.presentation.titlesList.TitlesListFragment"
+        tools:layout="@layout/fragment_titles_list"
+        android:label="TitlesListFragment" >
+        <action
+            android:id="@+id/action_titlesListFragment_to_titleDetailsFragment"
+            app:destination="@id/titleDetailsFragment">
+            <argument
+                android:name="title"
+                app:argType="com.titou.blaum.entities.Title"
+                app:nullable="false" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/titleDetailsFragment"
+        tools:layout="@layout/fragment_title_details"
+        android:name="com.titou.blaum.presentation.titlesDetails.TitleDetailsFragment"
+        android:label="TitleDetailsFragment" >
+        <argument
+            android:name="title"
+            app:argType="com.titou.blaum.entities.Title" />
+    </fragment>
+</navigation>

@@ -3,9 +3,7 @@ package com.titou.blaum.presentation.mainActivity
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.Navigation.findNavController
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment
 import com.titou.blaum.presentation.databinding.ActivityMainBinding
 
 

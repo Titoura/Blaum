@@ -1,4 +1,6 @@
 apply from: "$rootDir/gradle/base.gradle"
+apply plugin: 'kotlin-android'
+apply plugin: "androidx.navigation.safeargs.kotlin"
 
 dependencies {
 
