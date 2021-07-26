@@ -1,19 +1,24 @@
-package com.titou.blaum.presentation.mainActivity
+package com.titou.blaum.presentation.titlesList
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.titou.blaum.data.entity.Title
+import com.titou.blaum.entities.Title
 import com.titou.blaum.presentation.databinding.ItemTitleBinding
+import com.titou.blaum.presentation.mainActivity.MainActivityState
+import com.titou.blaum.presentation.utils.CellClickListener
 import com.titou.blaum.presentation.utils.loadWithHeader
 import io.reactivex.rxjava3.subjects.BehaviorSubject
 import org.koin.core.KoinComponent
 import org.koin.core.inject
 
 
-class TitleAdapter(titlesSubject: BehaviorSubject<MainActivityState>) :
+class TitleAdapter(
+    titlesSubject: BehaviorSubject<MainActivityState>,
+    private val cellClickListener: CellClickListener
+) :
     RecyclerView.Adapter<TitleAdapter.TitleViewHolder>(), KoinComponent {
 
     private val context: Context by inject()
@@ -30,7 +35,7 @@ class TitleAdapter(titlesSubject: BehaviorSubject<MainActivityState>) :
         })
     }
 
-    class TitleViewHolder(private val binding: ItemTitleBinding) :
+    class TitleViewHolder(val binding: ItemTitleBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(context: Context, title: Title) {
             binding.title = title
@@ -50,7 +55,12 @@ class TitleAdapter(titlesSubject: BehaviorSubject<MainActivityState>) :
     }
 
     override fun onBindViewHolder(holder: TitleViewHolder, position: Int) {
-        holder.bind(context, titles[position])
+        val title = titles[position]
+        holder.bind(context, title)
+
+        holder.itemView.setOnClickListener {
+            cellClickListener.onCellClickListener(title)
+        }
 
     }
 

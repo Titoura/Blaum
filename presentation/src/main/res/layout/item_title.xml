@@ -15,6 +15,7 @@
     app:cardBackgroundColor="@color/secondaryLightColor"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    app:rippleColor="@color/primaryColor"
     android:layout_marginHorizontal="@dimen/spacing_large"
     android:layout_marginVertical="@dimen/spacing_large"
     app:cardElevation="@dimen/card_elevation"

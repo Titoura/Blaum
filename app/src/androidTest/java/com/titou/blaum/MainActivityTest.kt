@@ -13,7 +13,7 @@ import com.titou.blaum.Utils.Matchers.recyclerViewSizeMatcher
 import com.titou.blaum.Utils.OrientationChangeAction.Companion.orientationLandscape
 import com.titou.blaum.presentation.R
 import com.titou.blaum.presentation.mainActivity.MainActivity
-import com.titou.blaum.presentation.mainActivity.TitleAdapter
+import com.titou.blaum.presentation.titlesList.TitleAdapter
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
