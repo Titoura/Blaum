@@ -34,7 +34,7 @@ class MainViewModel(private val titleRepository: TitleRepository) : KoinComponen
         )
             .map { (titles, searchInput) ->
                 if (searchInput.isBlank()) {
-                    titles
+                    titles.subList(0, 100)
                 } else {
                     titles.filter { it.title.contains(searchInput) }
                 }
