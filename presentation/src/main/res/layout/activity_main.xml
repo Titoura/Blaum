@@ -3,6 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="state"
+            type="com.titou.blaum.presentation.mainActivity.MainActivityState" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/root"
         android:layout_width="match_parent"
@@ -10,10 +19,53 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerview"
-            android:background="@color/secondaryColor"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/secondaryColor"
             tools:listitem="@layout/item_title" />
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/primaryColor"
+            android:visibility="@{ state.loading? View.VISIBLE : View.INVISIBLE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- TODO: use specific error types to display more precise error message-->
+        <TextView
+            android:id="@+id/error_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/spacing_default"
+            android:text="@string/default_error_message"
+            android:textColor="@color/primaryTextColor"
+            android:textSize="@dimen/h3"
+            android:visibility="@{ (!state.loading &amp;&amp; state.titles.size() == 0 &amp;&amp; state.error != null)? View.VISIBLE : View.INVISIBLE}"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Request error" />
+
+        <Button
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_large"
+            android:backgroundTint="@color/primaryColor"
+            android:text="@string/retry"
+            android:textColor="@color/textOnSecondaryColor"
+            android:visibility="@{ (!state.loading &amp;&amp; state.titles.size() == 0 &amp;&amp; state.error != null )? View.VISIBLE : View.INVISIBLE}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/error_textview" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

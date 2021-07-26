@@ -4,5 +4,8 @@
     <string name="album_x">Album %d</string>
     <string name="app_name">Blaum</string>
     <string name="search_filter">Filter</string>
-    <string name="search_hint">Filter</string>-
+    <string name="search_hint">Filter</string>
+    <string name="default_error_message">There has been an error. Please check you are connected to internet</string>
+    <string name="retry">Retry</string>
+    -
 </resources>

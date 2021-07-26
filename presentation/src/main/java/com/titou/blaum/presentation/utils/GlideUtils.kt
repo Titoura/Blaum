@@ -1,6 +1,5 @@
-package com.titou.blaum.presentation
+package com.titou.blaum.presentation.utils
 
-import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestManager
 import com.bumptech.glide.load.model.GlideUrl
 import com.bumptech.glide.load.model.LazyHeaders

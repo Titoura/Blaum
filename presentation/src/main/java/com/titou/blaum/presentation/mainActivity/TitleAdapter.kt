@@ -1,15 +1,13 @@
 package com.titou.blaum.presentation.mainActivity
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.titou.blaum.data.entity.Title
-import com.titou.blaum.presentation.R
 import com.titou.blaum.presentation.databinding.ItemTitleBinding
-import com.titou.blaum.presentation.loadWithHeader
+import com.titou.blaum.presentation.utils.loadWithHeader
 import io.reactivex.rxjava3.subjects.BehaviorSubject
 import org.koin.core.KoinComponent
 import org.koin.core.inject
