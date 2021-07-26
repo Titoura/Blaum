@@ -1,6 +1,6 @@
 apply from: "$rootDir/gradle/base.gradle"
 
-dependencies{
+dependencies {
 
     // Project modules
     implementation project(':entities')
@@ -13,8 +13,15 @@ dependencies{
     // Image caching and loading
     implementation runDependencies.glide
 
+    //Navigation
+    implementation runDependencies.androidx_navigation_fragment
+    implementation runDependencies.androidx_navigation_dynamic_features
+    implementation runDependencies.androidx_navigation_ui
+
+
     // Used for UI testing
     androidTestImplementation testDependencies.androidx_test_runner
     androidTestImplementation runDependencies.material
     androidTestImplementation runDependencies.androidx_constraintlayout
+
 }

@@ -64,11 +64,17 @@ dependencies {
     //UI
     implementation runDependencies.material
 
+    //Navigation
+    implementation runDependencies.androidx_navigation_fragment
+    implementation runDependencies.androidx_navigation_dynamic_features
+    implementation runDependencies.androidx_navigation_ui
+
     // UI Testing
     androidTestImplementation testDependencies.androidx_test_junit
     androidTestImplementation testDependencies.androidx_test_espresso
     androidTestImplementation testDependencies.androidx_test_runner
     androidTestImplementation testDependencies.espresso_contrib
+    testImplementation testDependencies.androidx_navigation_testing
 
     // Unit Testing
     testImplementation testDependencies.junit
