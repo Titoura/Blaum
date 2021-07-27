@@ -6,6 +6,8 @@ dependencies {
 
     // Project modules
     implementation project(':entities')
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation project(':use_cases')
 
     // UI
