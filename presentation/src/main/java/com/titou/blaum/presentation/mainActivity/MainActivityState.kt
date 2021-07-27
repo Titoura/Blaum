@@ -21,4 +21,13 @@ data class MainActivityState(
         result = 31 * result + titles.hashCode()
         return result
     }
+
+
+    companion object{
+        fun empty() = MainActivityState(false, null, emptyList())
+        fun error(throwable: Throwable? = null) = MainActivityState(false, throwable, emptyList())
+        fun success(titles : List<Title>) = MainActivityState(false, null, titles)
+        fun loading() = MainActivityState(true, null, emptyList())
+
+    }
 }

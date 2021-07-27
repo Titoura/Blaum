@@ -16,14 +16,10 @@ class TitleRepository(
 
     fun fetchAndSaveTitles() =
         getRemoteTitles()
-            .flatMap (
-                { titles -> databaseTitlesDataSource.saveTitles(titles).toObservable() },
-                { titles, _ -> titles }
-            )
-            .doOnError {
-                it.printStackTrace()
+            .firstOrError()
+            .flatMap { titles ->
+                databaseTitlesDataSource.saveTitles(titles)
             }
-            .onErrorResumeWith(getLocalTitles())
 }
 
 
