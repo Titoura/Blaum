@@ -2,9 +2,12 @@ package com.titou.blaum.presentation.titlesList
 
 import android.os.Bundle
 import android.view.*
+import android.widget.ImageView
+import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.titou.blaum.entities.Title
@@ -43,6 +46,7 @@ class TitlesListFragment : Fragment(), CellClickListener {
         // Inflate the layout for this fragment
         _binding = FragmentTitlesListBinding.inflate(layoutInflater)
 
+        postponeEnterTransition()
         setUpRecyclerView()
         setUpRefreshDataTrigger()
         setUpStateUpdates()
@@ -80,6 +84,7 @@ class TitlesListFragment : Fragment(), CellClickListener {
         viewModel.mainActivityState.subscribeOn(AndroidSchedulers.mainThread())
             .subscribe({ newState ->
                 binding.state = newState
+                startPostponedEnterTransition()
             }, {
                 it.printStackTrace()
             }).addTo(disposables)
@@ -91,6 +96,7 @@ class TitlesListFragment : Fragment(), CellClickListener {
     }
 
     override fun onPrepareOptionsMenu(menu: Menu) {
+        menu.clear()
         requireActivity().menuInflater.inflate(R.menu.main_menu, menu)
 
         val menuItem: MenuItem = menu.findItem(R.id.search_menu_item)
@@ -116,16 +122,21 @@ class TitlesListFragment : Fragment(), CellClickListener {
         super.onDestroy()
     }
 
-    fun navigateToDetails(title: Title) {
+    private fun navigateToDetails(title: Title, imageView: ImageView) {
         val directions =
             TitlesListFragmentDirections.actionTitlesListFragmentToTitleDetailsFragment(
-                title
+                title,
+                imageView.transitionName
             )
+        val extras = FragmentNavigatorExtras(
+            imageView to imageView.transitionName
+        )
 
-        findNavController().navigate(directions)
+
+        findNavController().navigate(directions, extras)
     }
 
-    override fun onCellClickListener(title: Title) {
-        navigateToDetails(title)
+    override fun onCellClickListener(title: Title, imageView: ImageView) {
+        navigateToDetails(title, imageView)
     }
 }

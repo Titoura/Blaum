@@ -64,6 +64,7 @@ dependencies {
 
     //UI
     implementation runDependencies.material
+    implementation runDependencies.swiperefreshlayout
 
     //Navigation
     implementation runDependencies.androidx_navigation_fragment

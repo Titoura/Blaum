@@ -26,6 +26,11 @@
         android:name="com.titou.blaum.presentation.titlesDetails.TitleDetailsFragment"
         android:label="TitleDetailsFragment" >
         <argument
+            android:name="uri"
+            app:argType="string"
+            app:nullable="false"/>
+
+        <argument
             android:name="title"
             app:argType="com.titou.blaum.entities.Title" />
     </fragment>

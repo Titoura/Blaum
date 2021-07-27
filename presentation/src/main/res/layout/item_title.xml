@@ -28,6 +28,7 @@
 
         <ImageView
             android:id="@+id/thumbnail_imageview"
+            android:transitionName="@{title.thumbnailUrl}"
             android:contentDescription="@string/title_thumbnail_description"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"

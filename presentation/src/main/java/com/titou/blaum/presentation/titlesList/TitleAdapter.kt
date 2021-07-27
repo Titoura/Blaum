@@ -1,9 +1,11 @@
 package com.titou.blaum.presentation.titlesList
 
+import android.R.attr.radius
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.bumptech.glide.Glide
 import com.titou.blaum.entities.Title
 import com.titou.blaum.presentation.databinding.ItemTitleBinding
@@ -26,7 +28,6 @@ class TitleAdapter(
     private val titles = mutableListOf<Title>()
 
     init {
-        //Todo : create function to remove and add directly in the mutablelist
         titlesSubject.subscribe({ newState ->
             titles.clear()
             titles.addAll(newState.titles)
@@ -41,9 +42,16 @@ class TitleAdapter(
             binding.title = title
             binding.executePendingBindings()
 
+            //TODO : find out why placeholder is not visible
+            val circularProgressDrawable = CircularProgressDrawable(context)
+            circularProgressDrawable.strokeWidth = 2F
+            circularProgressDrawable.centerRadius = radius.toFloat()
+            circularProgressDrawable.start()
+
             Glide
                 .with(context)
                 .loadWithHeader(title.thumbnailUrl)
+                .placeholder(circularProgressDrawable)
                 .into(binding.thumbnailImageview)
 
         }
@@ -59,7 +67,7 @@ class TitleAdapter(
         holder.bind(context, title)
 
         holder.itemView.setOnClickListener {
-            cellClickListener.onCellClickListener(title)
+            cellClickListener.onCellClickListener(title, holder.binding.thumbnailImageview)
         }
 
     }
