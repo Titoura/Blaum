@@ -29,7 +29,6 @@ ext {
             room                     : "2.3.0-alpha03",
             rx                       : "3.0.0",
             swiperefreshlayout       : "1.1.0",
-            ui_automator             : "2.2.0"
     ]
 
     runDependencies = [
@@ -72,7 +71,6 @@ ext {
             junit                      : "junit:junit:${versions.junit}",
             koin                       : "org.koin:koin-test:${versions.koin}",
             mockk                      : "io.mockk:mockk:${versions.mockk}",
-            ui_automator               : "androidx.test.uiautomator:${versions.uiautomator}"
     ]
 
     buildDependencies = [

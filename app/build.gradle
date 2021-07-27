@@ -84,7 +84,6 @@ dependencies {
     testImplementation testDependencies.mockk
     testImplementation testDependencies.assertk
     testImplementation testDependencies.koin
-    testImplementation testDependencies.ui_automator
 
 
     //Project modules
