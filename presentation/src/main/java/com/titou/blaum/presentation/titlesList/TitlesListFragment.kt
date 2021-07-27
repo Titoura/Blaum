@@ -51,6 +51,10 @@ class TitlesListFragment : Fragment(), CellClickListener {
         setUpRefreshDataTrigger()
         setUpStateUpdates()
 
+        binding.retryButton.setOnClickListener {
+            viewModel.onTriggerDataRefresh.onNext(Unit)
+        }
+
         return binding.root
     }
 

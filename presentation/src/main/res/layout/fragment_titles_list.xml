@@ -55,6 +55,7 @@
             tools:text="Request error" />
 
         <Button
+            android:id="@+id/retry_button"
             style="?attr/materialButtonOutlinedStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
