@@ -1,5 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <style name="Theme.Blaum" parent="Theme.AppCompat.DayNight">
+    <style name="Theme.Blaum" parent="Theme.MaterialComponents.DayNight">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/primaryColor</item>
         <item name="colorPrimaryVariant">@color/primaryDarkColor</item>
@@ -15,15 +15,25 @@
 
 
         <!-- Action bar related -->
-        <item name="actionBarTheme">@style/Theme.Blaum.ActionBar</item>
-<!--        <item name="actionMenuTextColor">@color/primaryTextColor</item>-->
+        <item name="actionBarTheme">@style/Theme.Blaum.ActionBar.Dark</item>
 
     </style>
+
+    <style name="Theme.Blaum.ActionBar.Dark" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="android:titleTextStyle">@style/Theme.Blaum.ActionBar.Text</item>
+        <item name="android:background">@color/secondaryDarkColor</item>
+    </style>
+
+    <style name="Theme.Blaum.ActionBar.Text" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/primaryTextColor</item>
+    </style>
+
+
 
     <style name="p1" parent="@android:style/TextAppearance.Large">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/primaryTextColor</item>
+        <item name="android:textColor">@color/secondaryTextColor</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">@dimen/p1</item>
     </style>

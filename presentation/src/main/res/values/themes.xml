@@ -16,11 +16,18 @@
 
 
         <!-- Action bar related -->
-<!--        <item name="actionBarTheme">@style/Theme.Blaum.ActionBar</item>-->
-<!--        <item name="actionMenuTextColor">@color/primaryTextColor</item>-->
-
-
+        <item name="actionBarTheme">@style/Theme.Blaum.ActionBar.Light</item>
     </style>
+
+    <style name="Theme.Blaum.ActionBar.Light" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="android:titleTextStyle">@style/Theme.Blaum.ActionBar.Text</item>
+        <item name="android:background">@color/primaryColor</item>
+    </style>
+
+    <style name="Theme.Blaum.ActionBar.Text" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/primaryTextColor</item>
+    </style>
+
 
     <style name="p1" parent="@android:style/TextAppearance.Large">
         <item name="android:layout_width">wrap_content</item>
@@ -36,13 +43,4 @@
         <item name="android:textColor">@color/secondaryTextColor</item>
         <item name="android:textSize">@dimen/p2</item>
     </style>
-
-    <style name="Theme.Blaum.ActionBar" parent="ThemeOverlay.AppCompat.DayNight.ActionBar">
-        <item name="android:titleTextStyle">@style/Theme.Blaum.ActionBar.Text</item>
-    </style>
-
-    <style name="Theme.Blaum.ActionBar.Text" parent="@android:style/TextAppearance">
-        <item name="android:textColor">@color/primaryTextColor</item>
-    </style>
-
 </resources>
