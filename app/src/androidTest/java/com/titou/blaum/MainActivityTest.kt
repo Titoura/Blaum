@@ -88,5 +88,8 @@ class MainActivityTest {
             .check(matches(recyclerViewSizeMatcher(defaultTitlesSize)))
 
     }
+
+    // TODO : add offline test
+    // TODO : add navigation test
 }
 
