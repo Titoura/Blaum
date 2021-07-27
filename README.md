@@ -3,7 +3,7 @@
 ## General
 
 ### Description
-Blaum is a sample app to load and display a list of songs fetched from [this endpoint](https://static.leboncoin.fr/img/shared/technical-test.json).
+Blaum is a sample app to load and display a list of songs fetched from [this endpoint](https://static.leboncoin.fr/img/shared/technical-test.json). <br/>
 The app should be able to store data locally in order to work offline.
 
 ### Features
@@ -14,23 +14,25 @@ The app should be able to store data locally in order to work offline.
 
 ### Design system
 
-This projects tries to follow Material UI guidelines.
-The design system has been thought as reflecting the NYC taxi colors. 
+This projects tries to follow Material UI guidelines.<br/>
+The design system has been thought as reflecting the NYC taxi colors. <br/>
 It follows this color system :  
 
-- Light : 
-- Dark 
+ - Light
+<img width="580" alt="Capture d’écran 2021-07-27 à 16 01 51" src="https://user-images.githubusercontent.com/22765915/127199581-0b9f1d51-9892-4132-a729-68afc1cd7205.png">
 
-##Implementation
+ - Dark
+<img width="579" alt="Capture d’écran 2021-07-27 à 16 05 18" src="https://user-images.githubusercontent.com/22765915/127199584-405aef6e-52d2-43e6-bd23-7d1838ad65df.png">
+
+## Implementation
 
 The app has been developed using Kotlin, for a minimum SDK version of 21.
 
 
-###Architecture
+### Architecture
 
-The app is build following a MVVM architecture.
-It follows as much as possible the SOLID guidelines.
-On the UI side, data is 
+The app is build following a MVVM architecture.<br/>
+It follows as much as possible the SOLID guidelines.<br/>
 
 The project is divided in 4 modules in addition to the app :
 1. entities
@@ -49,11 +51,15 @@ The project is divided in 4 modules in addition to the app :
    - Contains implementations of use_cases interfaces
    - Contains code to get data from remote and database
 
-Separating the code into different modules allows to build more quickly.
-It is also a good practice since it allows to plug, remove, edit modules on their own, most times without affecting the rest of the code.
-Interfaces were also implemented to implement reverse dependencies.
+Separating the code into different modules allows to build more quickly.<br/>
+It is also a good practice since it allows to plug, remove, edit modules on their own, most times without affecting the rest of the code.<br/>
+Interfaces were also implemented to implement reverse dependencies.<br/>
 
-###Technical choices
+### Front && design patterns
+
+The UI is built using Android view binding and data binding tools. 
+
+### Technical choices
 
 The app uses a variety of widely used libraries :
 - `androidx` libraries for android functionalities,
@@ -64,8 +70,9 @@ The app uses a variety of widely used libraries :
 - `Glide` to load and display images,
 - `Espresso` for the UI tests,
 - `junit` for the unit tests,
+- `Navigation Component` for navigation between fragments
 
-###Git
+### Git
 
 The project was versioned on Github, following this guideline: 
 - 1 branch for 1 feature
@@ -73,7 +80,7 @@ The project was versioned on Github, following this guideline:
 
 In bigger projects, such behaviors allow to have a clean and clear git tree, and to simply follow Pull Requests (for Pear code review)   
 
-###Testing
+### Testing
 
 The project contains two types of test: 
 
@@ -85,5 +92,15 @@ The project contains two types of test:
 2. UI tests
    - UI tests allow to test if the interactions with the interface are working fine. 
    
-   
-   
+
+
+## APK
+
+The APK is available [here](https://appsenjoy.com/FrEvD).
+
+## Next steps
+
+- Add French translations
+- Navigation tests
+- Implement UI widgets standard styling
+- Nice Splash animation
